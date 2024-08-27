@@ -1,14 +1,23 @@
 #!/usr/bin/env zsh
 
+cp zsh/.zshrc ~/.zshrc
+
 # homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # git
-brew install git
+#brew install git
+
+# nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 20
 
 # pnpm
-curl -fsSL https://get.pnpm.io/install.sh | sh -
+#curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-
-
+GO_VERSION=1.22.5
+GO_ARCH=darwin-arm64
+GO_FILE=go$GO_VERSION.$GO_ARCH.tar.gz
+curl https://go.dev/dl/$GO_FILE -o $GO_FILE
+tar -xf $GO_FILE /usr/local/go
 

@@ -104,30 +104,14 @@ alias dps="docker ps"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 # Bun
 export BUN_INSTALL="/Users/simonhylander/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/Users/simonhylander/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# nvm
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm
-
-#export NVM_HOME="/Users/simonhylander/.nvm"
-#export PATH="$NVM_HOME/nvm.sh:$PATH"
-
-# java
-
-# go
-
-export VSCODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH=$PATH:$VSCODE_HOME
-
 
 # pnpm
 export PNPM_HOME="/Users/simonhylander/.local/share/pnpm"
@@ -141,3 +125,19 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+
+# bun completions
+[ -s "/Users/simonhylander/.bun/_bun" ] && source "/Users/simonhylander/.bun/_bun"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+
+
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
